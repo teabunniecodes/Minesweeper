@@ -3,8 +3,6 @@ __author__ = 'ambivalentbunnie'
 import random
 import string
 
-# echo -e "\e[1;33;40m Yellow on black \e[m"
-
 class Minesweeper:
     # build board and define how many mines/level
     def __init__(self):
