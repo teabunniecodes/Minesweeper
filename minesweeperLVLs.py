@@ -3,6 +3,12 @@ __author__ = 'ambivalentbunnie'
 import random
 import string
 
+class Color:
+    RED = "\033[31m"
+    GREEN = "\033[32m"
+    YELLOW = "\033[33m"
+    END = "\033[0m"
+
 class Minesweeper:
     # build board and define how many mines/level
     def __init__(self):
@@ -117,10 +123,10 @@ class Minesweeper:
     def place_flag(self):
         if self.count_flags <= self.num_mines:
             if self.dict_board[self.flag] == "O":
-                self.dict_board[self.flag] = "X"
+                self.dict_board[self.flag] = f"{Color.RED}X{Color.END}"
                 self.count_flags += 1
                 self.print_board()
-            elif self.dict_board[self.flag] == "X":
+            elif self.dict_board[self.flag] == f"{Color.RED}X{Color.END}":
                 self.dict_board[self.flag] = "O"
                 self.count_flags -= 1
                 self.print_board()
