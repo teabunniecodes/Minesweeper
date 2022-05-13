@@ -191,7 +191,7 @@ class Minesweeper:
                     self.countSpaces -= 1
                     self.uncover_space(self.move[0], self.move[1])
                     self.print_board()
-            elif self.dict_board[self.move] == "X":
+            elif self.dict_board[self.move] == f"{Color.RED}X{Color.END}":
                 print("Uhmmm, you want to dig up a flag you put down??")
             elif self.dict_board[self.move] != "O":
                 print("You already uncovered this space -_-")
